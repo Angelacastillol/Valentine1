@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage with Buttons</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #yesButton {
+            background-color: #7bb35d ;
+            color: white;
+        }
+
+        #noButton {
+            background-color: #ae3127;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="container">
+        <img src="duck.gif" alt="Duck Gif" style="width: 100px; height: 100px; position: absolute; top: 190px; left: 35%;" />
+        <img src="tokki.gif" alt="Tokki Gif" style="width: 145px; height: 145px; position: absolute; top: 165px; left: 50%;" />
+        <h1>Would you be my valentine date?</h1>
+
+        <button id="yesButton" onclick="showResponse('Yes')">Yes</button>
+        <button id="noButton" onclick="confirmAction()">No</button>
+
+        <p id="response"></p>
+    </div>
+
+    <script>
+        let noButtonClickCount = 0;
+
+        function showResponse(answer) {
+            document.getElementById('response').innerText = 'Thank You! Text me';
+
+        }
+
+        function confirmAction() {
+            const noButton = document.getElementById('noButton');
+            const yesButton = document.getElementById('yesButton');
+            
+            if (noButtonClickCount === 0) {
+                noButton.innerText = 'Are u sure?';
+                yesButton.style.fontSize = '20px';
+                yesButton.removeEventListener('click', showResponse);
+            } else if (noButtonClickCount === 1) {
+                noButton.innerText = 'Why not?';
+                yesButton.style.fontSize = '25px'; // Cambia el tamaño a 25px después del segundo clic en "No"
+            } else if (noButtonClickCount === 2){
+                noButton.innerText = 'Are you sure sure?';
+                yesButton.style.fontSize = '30px';
+            }  else if (noButtonClickCount === 3){
+                noButton.innerText = 'if it was Bae would you say yes?';
+                yesButton.style.fontSize = '40px';
+            } else if (noButtonClickCount === 4){
+                noButton.innerText = 'i can gave u Photocards';
+                yesButton.style.fontSize = '50px';
+            } else if (noButtonClickCount === 5){
+                noButton.innerText = 'Come on, Please!'
+                yesButton.style.fontSize = '65px';
+            } else if (noButtonClickCount === 6){
+                noButton.innerText = 'just say yes';
+                yesButton.style.fontSize = '80px';
+            } else if (noButtonClickCount === 7){
+                noButton.innerText = 'Yes!';
+                yesButton.style.fontSize = '90px';
+            } 
+
+            noButtonClickCount++;
+        }
+    </script>
+
+</body>
+</html>
