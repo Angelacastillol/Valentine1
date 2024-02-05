@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webpage with Buttons</title>
+    <title>Hello!</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         #yesButton {
@@ -21,8 +21,7 @@
 <body>
 
     <div id="container">
-        <img src="duck.gif" alt="Duck Gif" style="width: 100px; height: 100px; position: absolute; top: 190px; left: 35%;" />
-        <img src="tokki.gif" alt="Tokki Gif" style="width: 145px; height: 145px; position: absolute; top: 165px; left: 50%;" />
+        <img id="duckImage" src="duck.gif" alt="Duck Gif" style="width: 100px; height: 100px; position: absolute; top: 25%; left: 40%;" />
         <h1>Would you be my valentine date?</h1>
 
         <button id="yesButton" onclick="showResponse('Yes')">Yes</button>
@@ -32,12 +31,15 @@
     </div>
 
     <script>
-        let noButtonClickCount = 0;
+         let noButtonClickCount = 0;
 
-        function showResponse(answer) {
-            document.getElementById('response').innerText = 'Thank You! Text me';
+function showResponse(answer) {
+    const responseElement = document.getElementById('response');
+    const duckImage = document.getElementById('duckImage');
 
-        }
+    responseElement.innerText = 'Thank You! Text me';
+
+}
 
         function confirmAction() {
             const noButton = document.getElementById('noButton');
@@ -72,7 +74,9 @@
 
             noButtonClickCount++;
         }
+    
     </script>
+
 
 </body>
 </html>
